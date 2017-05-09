@@ -1,0 +1,79 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.iform{
+  margin-top: 20px;
+  text-align: center;
+  h1{
+    margin-bottom: 15px;
+  }
+}
+.space{
+  margin: 20px;
+}
+.pokename{
+  &::first-letter{
+     text-transform: uppercase;
+  }
+}
+.sprite{
+  width: 100%;
+  img{
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+.types{
+  margin-top: 10px;
+  text-align: center;
+  .type{
+    display: inline-block;
+    margin: 30px;
+    &::first-letter{
+       text-transform: uppercase;
+    }
+  }
+}
+
+.abilities{
+  margin-top: 20px;
+  text-align: center;
+  .ability{
+    display: inline-block;
+    margin: 10px;
+    &::first-letter{
+       text-transform: uppercase;
+    }
+  }
+}
+
+.stats{
+  margin-top: 20px;
+  text-align: center;
+  .stat{
+    margin: 10px;
+    display: inline-block;
+    &::first-letter{
+       text-transform: uppercase;
+    }
+  }
+}
+
+.moves{
+  margin-top: 20px;
+  text-align: center;
+  .move{
+    margin: 10px;
+    &::first-letter{
+       text-transform: uppercase;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+ .sprite{
+   margin: 0 auto;
+   max-width: 200px;
+ }
+ }

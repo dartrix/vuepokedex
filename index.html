@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Pokemon Stats!</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.min.css">
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="container">
+       <div class="row justify-content-center">
+
+         <div class="col-sm-4">
+           <div class="iform">
+           <h2>Type a pokemon!</h2>
+           </div>
+           <div class="input-group">
+             <input type="text" class="form-control" placeholder="Search for..." v-model='pokemon'>
+          </div>
+         </div>
+       </div>
+       <div class="space"></div>
+       <div class="row">
+         <div class="col-xs-12 col-md-4">
+           <div class="sprite">
+           <img :src="sprite.front_default" alt="">
+           </div>
+         </div>
+         <div class="col-xs-12 col-md-8">
+
+           <div class="pokename">
+          <h3 class="text-center">{{pokemon}}</h3>
+
+          <h6 class="text-center">{{searching}}</h6>
+
+
+          </div>
+
+
+
+          <div class="pokestats">
+
+            <div class="row justify-content-center">
+              <div class="types">
+                          <h5>Types</h5>
+
+                  <div class="type" v-for="type in types" :key='type'>{{type.type.name}}</div>
+
+              </div>
+            </div>
+            <hr>
+            <div class="row justify-content-center">
+              <div class="abilities">
+                <h5>Abilities</h5>
+                <div class="ability" v-for="ability in abilities">{{ability.ability.name}}</div>
+
+              </div>
+            </div>
+            <hr>
+            <div class="row justify-content-center">
+              <div class="stats">
+                <h5>Base Stats</h5>
+                <div class="stat" v-for="stat in stats">{{stat.stat.name}}: {{stat.base_stat}} </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row justify-content-center">
+              <div class="moves">
+                <h5>Moves</h5>
+                <div class="move" v-for="move in moves">{{move.move.name}}</div>
+              </div>
+            </div>
+
+          </div>
+
+
+         </div>
+       </div>
+      </div>
+
+    </div> <!-- end of #app -->
+  </body>
+
+  <script src="https://unpkg.com/vue@2.0.3/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/axios@0.12.0/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/lodash@4.13.1/lodash.min.js"></script>
+
+<script src="master.js" charset="utf-8"></script>
+</html>
