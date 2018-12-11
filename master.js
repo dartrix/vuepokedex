@@ -22,7 +22,9 @@ var app = new Vue({
     lookuppokemon: _.debounce(function() {
         var app = this
        app.searching = 'Searching...';
-      axios.get('http://pokeapi.co/api/v2/pokemon/' + app.pokemon.toLowerCase())
+      axios.get('http://pokeapi.co/api/v2/pokemon/' + app.pokemon.toLowerCase(), {
+	headers: {
+	  'Access-Control-Allow-Origin': '*'}})
             .then(function (response) {
               app.searching = '';
 
